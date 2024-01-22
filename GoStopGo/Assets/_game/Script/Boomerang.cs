@@ -24,7 +24,7 @@ public class Boomerang : MonoBehaviour
         {
             goback = true;
         }
-        if(Vector3.Distance(transform.position, parent.position) < 0.1f )
+        if(Vector3.Distance(transform.position, parent.position) < 1.2f )
         {
             if(goback == true)
             {

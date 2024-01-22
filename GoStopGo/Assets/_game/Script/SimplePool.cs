@@ -4,7 +4,6 @@ using UnityEngine;
 
 public class SimplePool : MonoBehaviour
 {
-    public static SimplePool instance;
     public List<GameObject> list_Pooled_Bullet;
     public List<GameObject> list_Pooled_Boomerang;
     public List<ParticleSystem> list_Pooled_Particles;
@@ -12,8 +11,9 @@ public class SimplePool : MonoBehaviour
     public GameObject prefab_Bot;
     public ParticleSystem prefab_Particle;
     public GameObject prefab_Boomerang;
-    
     public Transform pool_parent;
+
+    public static SimplePool instance;
 
     void Start()
     {
@@ -40,6 +40,10 @@ public class SimplePool : MonoBehaviour
             list_Pooled_Bullet.Add(obj);
         }
     }
+    public Vector3 Get_Random_Position()
+    {
+        return new Vector3(Random.Range(-80, 80), 1, Random.Range(-80, 80));
+    }
     public GameObject Get_Pooled_Bullet()
     {
         return list_Pooled_Bullet.Find(x => x.activeInHierarchy == false);
@@ -52,8 +56,5 @@ public class SimplePool : MonoBehaviour
     {
         return list_Pooled_Boomerang.Find(x => x.activeInHierarchy == false);
     }
-    public Vector3 Get_Random_Position()
-    {
-        return new Vector3(Random.Range(-80, 80), 1, Random.Range(-80, 80));
-    }
+    
 }
