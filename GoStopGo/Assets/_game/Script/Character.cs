@@ -1,6 +1,7 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using TreeEditor;
 using UnityEngine;
 using UnityEngine.SocialPlatforms;
 
@@ -45,10 +46,11 @@ public class Character : MonoBehaviour
             target_position.y = transform.position.y;
             transform.LookAt(target_position);
             yield return new WaitForSeconds(0.39f);
-            GameObject clone = SimplePool.instance.Get_Pooled_Bullet();
+            GameObject clone = SimplePool.instance.Get_Pooled_Boomerang();
             clone.SetActive(true);
             clone.transform.position = transform.position + transform.forward * 1.5f;
-            clone.gameObject.GetComponent<Bullet>().target= target_position;
+            clone.gameObject.GetComponent<Boomerang>().target_position= target_position;
+            clone.gameObject.GetComponent<Boomerang>().parent = transform;
             canMove = true;
         }
     }

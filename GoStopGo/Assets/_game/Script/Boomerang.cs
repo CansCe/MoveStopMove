@@ -27,7 +27,10 @@ public class Boomerang : MonoBehaviour
         if(Vector3.Distance(transform.position, parent.position) < 0.1f )
         {
             if(goback == true)
-            gameObject.SetActive(false);
+            {
+                gameObject.SetActive(false);
+                goback = false;
+            }
         }
         existenceTime -= Time.deltaTime;
         if (existenceTime <= 0.1f)
@@ -44,11 +47,4 @@ public class Boomerang : MonoBehaviour
     {
         transform.position = Vector3.MoveTowards(transform.position, parent.position, speed * Time.deltaTime);
     }
-    //private void OnTriggerEnter(Collider other)
-    //{
-    //    if (other.gameObject.CompareTag("Bullet"))
-    //    {
-    //        gameObject.SetActive(false);
-    //    }
-    //}
 }

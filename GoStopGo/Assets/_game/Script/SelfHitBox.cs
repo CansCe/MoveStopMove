@@ -15,5 +15,9 @@ public class SelfHitBox : MonoBehaviour
                 parent.GetComponent<Character>().Dead();
             }
         }
+        if (other.gameObject.CompareTag("Boomerang"))
+        {
+            return;
+        }
     }
 }

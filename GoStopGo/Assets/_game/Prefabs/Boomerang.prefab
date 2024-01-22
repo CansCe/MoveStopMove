@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: 6320122797660337497}
   m_Layer: 0
   m_Name: Boomerang
-  m_TagString: Bullet
+  m_TagString: Boomerang
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -77,9 +77,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   parent: {fileID: 0}
-  speed: 0
-  rotateSpeed: 0
-  target_Position: {x: 0, y: 0, z: 0}
+  speed: 8
+  target_position: {x: 0, y: 0, z: 0}
+  existenceTime: 2
 --- !u!1001 &9643753232783160
 PrefabInstance:
   m_ObjectHideFlags: 0
