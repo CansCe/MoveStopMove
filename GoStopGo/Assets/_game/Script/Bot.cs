@@ -12,6 +12,7 @@ public class Bot : Character
     public Transform target_Player;
     public Vector3 next_Position;
     public GameObject is_Targeted;
+    public GameObject hit_Circle;
     float timer;
  
     void  Start()
@@ -76,7 +77,7 @@ public class Bot : Character
      }
     public override Vector3 Get_Nearest_Enemy()
     {
-        Collider[] colliders = Physics.OverlapSphere(transform.position, range);
+        Collider[] colliders = Physics.OverlapSphere(transform.position, range+7f);
         float min = Mathf.Infinity;
         Vector3 temparory = Vector3.zero;
         foreach (Collider collider in colliders)
@@ -130,6 +131,8 @@ public class Bot : Character
     {
         base.Dead();
         is_Targeted.SetActive(false);
+        agent.velocity = Vector3.zero;
+        hit_Circle.SetActive(false);
         StartCoroutine(After_Dead());
     }
     IEnumerator After_Dead()

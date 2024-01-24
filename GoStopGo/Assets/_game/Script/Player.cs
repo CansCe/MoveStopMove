@@ -8,6 +8,7 @@ public class Player : Character
     public Joystick control_joystick;
     public static Player instance;
     public GameObject self_Capsule_HitBox;
+    public GameObject detect_Range;
     public int current_Targeted_Enemy=0;
     void Start()
     {
@@ -60,33 +61,12 @@ public class Player : Character
             }
         }
     }
-    private void OnTriggerEnter(Collider other)
-    {
-        if (other.gameObject.CompareTag("Bot"))
-        {
-            target_position = other.gameObject.transform.position;
-            target_Transform = other.gameObject.transform;
-            if(current_Targeted_Enemy == 0)
-            {
-                current_Targeted_Enemy++;
-            }
-        }
-    }
     
-    private void OnTriggerStay(Collider other)
+    //override Dead function
+    public override void Dead()
     {
-        if (other.gameObject.CompareTag("Bot"))
-        {
-            if (other.gameObject.GetComponent<Character>().isDead)
-            {
-                target_position = Vector3.zero;
-                target_Transform = null;
-                transform.localScale = new Vector3(1.25f, 1.25f, 1.25f);
-                self_Capsule_HitBox.transform.localScale = new Vector3(1.25f, 1.25f, 1.25f);
-                transform.position = new Vector3(transform.position.x, transform.position.y + 0.005f, transform.position.z);
-                _Camera.instance.adding_Vector.y += 0.015f;
-                _Camera.instance.adding_Vector.z -= 0.015f;
-            }
-        }
+        base.Dead();
+        if(gold_Earned >0)
+            GameManager.instance.SaveGame(gold_Earned);
     }
 }

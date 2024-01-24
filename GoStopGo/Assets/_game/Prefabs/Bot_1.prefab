@@ -15,7 +15,7 @@ GameObject:
   - component: {fileID: 6923389687976629908}
   m_Layer: 0
   m_Name: Self Hit Box
-  m_TagString: Untagged
+  m_TagString: HitBox
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -217,9 +217,9 @@ GameObject:
   - component: {fileID: 4767972931467025669}
   - component: {fileID: 7824566631570761355}
   - component: {fileID: 3020933815497242608}
-  - component: {fileID: 3575370688404955712}
   - component: {fileID: 3060280743688427975}
   - component: {fileID: -3147376666181679114}
+  - component: {fileID: 3575370688404955712}
   m_Layer: 0
   m_Name: Bot_1
   m_TagString: Bot
@@ -304,36 +304,6 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
---- !u!114 &3575370688404955712
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 762917237826302295}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: dabcfe8f3d9cf8d4da89b2d8d0388e14, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  anim: {fileID: 3060280743688427975}
-  hp: 1
-  speed: 15
-  radius: 6.2
-  isDead: 0
-  canMove: 1
-  range: 0
-  rb: {fileID: 3020933815497242608}
-  target_position: {x: 0, y: 0, z: 0}
-  current_bullet: 1
-  target_Transform: {fileID: 0}
-  wanderRadius: 15
-  wanderTimer: 4
-  waitToShootTime: 0
-  agent: {fileID: -3147376666181679114}
-  target_Player: {fileID: 0}
-  next_Position: {x: 0, y: 0, z: 0}
-  is_Targeted: {fileID: 186767629565853861}
 --- !u!95 &3060280743688427975
 Animator:
   serializedVersion: 5
@@ -377,6 +347,37 @@ NavMeshAgent:
   m_BaseOffset: 1
   m_WalkableMask: 4294967295
   m_ObstacleAvoidanceType: 4
+--- !u!114 &3575370688404955712
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 762917237826302295}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: dabcfe8f3d9cf8d4da89b2d8d0388e14, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  anim: {fileID: 3060280743688427975}
+  hp: 1
+  speed: 15
+  radius: 6.2
+  isDead: 0
+  canMove: 1
+  range: 0
+  rb: {fileID: 3020933815497242608}
+  target_position: {x: 0, y: 0, z: 0}
+  current_bullet: 1
+  target_Transform: {fileID: 0}
+  wanderRadius: 50
+  wanderTimer: 3.5
+  waitToShootTime: 0
+  agent: {fileID: -3147376666181679114}
+  target_Player: {fileID: 0}
+  next_Position: {x: 0, y: 0, z: 0}
+  is_Targeted: {fileID: 186767629565853861}
+  hit_Circle: {fileID: 7391000015823866238}
 --- !u!1 &2339137035568192203
 GameObject:
   m_ObjectHideFlags: 0
