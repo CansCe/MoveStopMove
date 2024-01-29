@@ -1,18 +1,34 @@
 using System.Collections;
 using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEngine;
 
 public class GameStateManager : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
+    private static GameStateManager _instance;
+    public static GameStateManager instance
     {
-        
+        get
+        {
+            if (_instance == null)
+            {
+                _instance = new GameStateManager();
+            }
+            return _instance;
+        }
     }
-
-    // Update is called once per frame
-    void Update()
+    public IState CurrentGameState { get; private set; }
+    public delegate void GameStateChangeHandler(IState newGameState);
+    public event GameStateChangeHandler OnGameStateChanged;
+    private GameStateManager()
     {
-        
+
+    }
+    public void SetState(IState newGameState)
+    {
+        if (newGameState == CurrentGameState)
+            return;
+        CurrentGameState = newGameState;
+        OnGameStateChanged?.Invoke(newGameState);
     }
 }
