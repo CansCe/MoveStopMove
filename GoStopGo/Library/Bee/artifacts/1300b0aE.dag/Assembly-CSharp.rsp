@@ -406,6 +406,7 @@
 "Assets/_game/Script/BulletScript/Bullet.cs"
 "Assets/_game/Script/Display.cs"
 "Assets/_game/Script/GameMachanics/BigObjectToFade.cs"
+"Assets/_game/Script/GameMachanics/Shop.cs"
 "Assets/_game/Script/GameMachanics/_Camera.cs"
 "Assets/_game/Script/GameMachanics/_GameManager.cs"
 "Assets/_game/Script/PlayerData/Bot.cs"
@@ -415,8 +416,6 @@
 "Assets/_game/Script/SimplePool.cs"
 "Assets/_game/Script/UIManager.cs"
 "Assets/_game/Script/Wardrobe.cs"
-"Assets/_game/StateMachine/GameState.cs"
-"Assets/_game/StateMachine/GameStateManager.cs"
 -langversion:9.0
 
 /deterministic

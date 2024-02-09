@@ -1,50 +1,104 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
 public class GameManager : MonoBehaviour
 {
-    int player_Gold;
+    public int player_Gold;
+    public int[] obtained_weapon;
+    //obtained weapon string
+    public int[] obtained_pants;
+    public int[] obtained_sets;
+
     public static GameManager instance;
-    // Start is called before the first frame update
-    private void Awake()
-    {
-        
-    }
+
+    public static event Action<GameState> OnGameStateChanged;
+
+    public GameState current_State;
+    
     void Start()
     {
         instance = this;
-        //load player_Gold
-        player_Gold = PlayerPrefs.GetInt("gold");
-        Debug.Log(player_Gold);
-    }
-
-    // Update is called once per frame
+        LoadGame();
+        StartLevel();
+    }   
     void Update()
     {
         
     }
     public void SaveGame(int gold)
     {
-        //save game
         player_Gold += gold;
+
         PlayerPrefs.SetInt("gold", player_Gold);
         PlayerPrefs.Save();
-        if(player_Gold > 500)
-            PlayerPrefs.DeleteAll();
+    }
+    public void LoadGame()
+    {
+        player_Gold = PlayerPrefs.GetInt("gold");
+        Debug.Log(player_Gold);
     }
     public void StartLevel()
     {
+            SimplePool.Execute();
+            foreach (GameObject bot in SimplePool.instance.list_Pooled_Bots)
+            {
+                bot.SetActive(true);
+            }
+        //UIManager.instance.StartLevel();
+    }
+    public void ResetLevel()
+    {
         foreach (GameObject bot in SimplePool.instance.list_Pooled_Bots)
         {
-            bot.SetActive(true);
+            bot.SetActive(false);
         }
-        //get to UImanager to disable start UI and enable player control ui
-        UIManager.instance.StartLevel();
+        UIManager.instance.ResetLevel();
     }
-
     public void PauseGame()
     {
+        SimplePool.instance.Pause_State();
+    }
+    public void ResumeLevel()
+    {
+        SimplePool.instance.Resume_State();
+    }
 
+    //obtained item set as string 
+    //split string into array
+    //check if the item is already obtained
+    //if not, add to the array
+
+    public void UpdateGameState(GameState newState)
+    {
+        current_State = newState;
+
+        switch (newState)
+        {
+            case GameState.Start:
+                break;
+            case GameState.Play:
+                StartLevel();
+                break;
+            case GameState.Paused:
+                PauseGame();
+                break;
+            case GameState.GameOver:
+                break;
+            case GameState.Resume:
+                ResumeLevel();
+                break;
+            default:
+                throw new ArgumentOutOfRangeException(nameof(newState),newState,null);
+        }
+    }
+    public enum GameState
+    {
+        Start,
+        Play,
+        Paused,
+        Resume,
+        GameOver,
     }
 }

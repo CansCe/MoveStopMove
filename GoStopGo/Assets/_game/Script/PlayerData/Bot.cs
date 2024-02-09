@@ -148,4 +148,23 @@ public class Bot : Character
             is_Targeted.SetActive(false);
         }
     }
+
+    public void Paused()
+    {
+        next_Position = agent.destination;
+        agent.ResetPath();
+        agent.velocity = Vector3.zero;
+    }
+    public void Resume()
+    {
+        if (next_Position == null)
+        {
+            agent.destination = Get_Nearest_Enemy();
+        }
+        else
+        {
+            agent.destination = next_Position;
+        }
+
+    }
 }

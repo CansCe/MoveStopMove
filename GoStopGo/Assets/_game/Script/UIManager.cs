@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -17,5 +18,11 @@ public class UIManager : MonoBehaviour
     {
         start_Game_Canvas.gameObject.SetActive(false);
         player_contoller_Canvas.gameObject.SetActive(true);
+    }
+
+    public void ResetLevel()
+    {
+        start_Game_Canvas.gameObject.SetActive(true);
+        player_contoller_Canvas.gameObject.SetActive(false);
     }
 }

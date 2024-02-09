@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEngine;
 
 public class SimplePool : MonoBehaviour
@@ -15,12 +16,16 @@ public class SimplePool : MonoBehaviour
     public List<ParticleSystem> list_Pooled_Particles;
 
     public static SimplePool instance;
-    void Start()
+    public void Start()
     {
         instance = this;
         SpawnAndPoolBots(10);
         SpawnAndPoolBullet(10);
         SpawnAndPoolParticle(10);
+    }
+    public static void Execute()
+    {
+        instance = FindObjectOfType<SimplePool>();
     }
     public Vector3 Get_Random_Position()
     {
@@ -68,6 +73,13 @@ public class SimplePool : MonoBehaviour
             list_Pooled_Particles.Add(obj);
         }
     }
+    public void Level_Start()
+    {
+        foreach (GameObject bot in list_Pooled_Bots)
+        {
+            bot.SetActive(true);
+        }
+    }
     public void Reset_Pool()
     {
         foreach (GameObject bot in list_Pooled_Bots)
@@ -85,6 +97,20 @@ public class SimplePool : MonoBehaviour
         foreach (ParticleSystem particle in list_Pooled_Particles)
         {
             particle.Stop();
+        }
+    }
+    public void Pause_State()
+    {
+        foreach(GameObject bot in list_Pooled_Bots)
+        {
+            bot.GetComponent<Bot>().Paused();
+        }
+    }
+    public void Resume_State()
+    {
+        foreach(GameObject bot in list_Pooled_Bots)
+        {
+            bot.GetComponent<Bot>().Resume();
         }
     }
 }

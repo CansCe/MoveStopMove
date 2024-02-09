@@ -10,7 +10,6 @@ public class Player : Character
     public Joystick control_joystick;
     public int current_Targeted_Enemy=0;
     public GameObject self_Capsule_HitBox;
-
     public static Player instance;
 
     void Start()
@@ -21,13 +20,15 @@ public class Player : Character
     void Update()
     {
         if(isDead != true)
-            if(canMove)
+            if (canMove)
+            {
                 Rotate_And_AnimChange();
-        if(Vector3.Distance(transform.position,target_position) > range)
-        {
-            current_Targeted_Enemy = 0;
-            target_position = Get_Nearest_Enemy();
-        }
+                if (Vector3.Distance(transform.position, target_position) > range)
+                {
+                    current_Targeted_Enemy = 0;
+                    target_position = Get_Nearest_Enemy();
+                }
+            }
     }
     void FixedUpdate()
     {
@@ -69,5 +70,13 @@ public class Player : Character
         base.Dead();
         if(gold_Earned >0)
             GameManager.instance.SaveGame(gold_Earned);
+    }
+
+    public void Paused()
+    {
+        //cannot move and shoot
+        canMove = false;
+        rb.velocity = Vector3.zero;
+        ChangeAnim("Idle");
     }
 }

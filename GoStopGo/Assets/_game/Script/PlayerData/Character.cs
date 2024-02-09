@@ -26,6 +26,17 @@ public class Character : MonoBehaviour
 
     public GameObject head;
 
+    public static Character _instance;
+
+    private void Awake()
+    {
+        _instance = GetComponent<Character>();
+        GameManager.OnGameStateChanged += OnGameStateChanged;
+    }
+    protected virtual void OnDestroy()
+    {
+        GameManager.OnGameStateChanged -= OnGameStateChanged;
+    }
     public void ChangeAnim(string newAnimation)
     {
         if(current_Animation != "")
@@ -114,25 +125,14 @@ public class Character : MonoBehaviour
     }
     public void LevelUp()
     {
-        //increase scale by 0.5
         transform.localScale = new Vector3(transform.localScale.x + 0.15f, transform.localScale.y + 0.15f, transform.localScale.z + 0.15f);
         transform.position = transform.position + new Vector3(0, 0.15f, 0);
-        //increase hitbox scale by 0.5
         if (gameObject.CompareTag("Player"))
         {
             GetComponent<Player>().self_Capsule_HitBox.transform.localScale = new Vector3(GetComponent<Player>().self_Capsule_HitBox.transform.localScale.x + 0.15f, GetComponent<Player>().self_Capsule_HitBox.transform.localScale.y + 0.15f, GetComponent<Player>().self_Capsule_HitBox.transform.localScale.z + 0.15f);
             GetComponent<Player>().detect_Range.transform.localScale = new Vector3(GetComponent<Player>().detect_Range.transform.localScale.x + 0.15f, GetComponent<Player>().detect_Range.transform.localScale.y + 0.15f, GetComponent<Player>().detect_Range.transform.localScale.z + 0.15f);
             _Camera.instance.adding_Vector = new Vector3(_Camera.instance.adding_Vector.x, _Camera.instance.adding_Vector.y + 1.5f, _Camera.instance.adding_Vector.z-0.5f );
             range += 1.5f;
-        }
-        else
-        {
-            //if(gameObject.CompareTag("Bot"))
-            //{
-            //    GetComponent<Bot>().self_Capsule_HitBox.transform.localScale = new Vector3(GetComponent<Bot>().self_Capsule_HitBox.transform.localScale.x + 0.15f, GetComponent<Bot>().self_Capsule_HitBox.transform.localScale.y + 0.15f, GetComponent<Bot>().self_Capsule_HitBox.transform.localScale.z + 0.15f);
-            //    GetComponent<Bot>().detect_Range.transform.localScale = new Vector3(GetComponent<Bot>().detect_Range.transform.localScale.x + 0.15f, GetComponent<Bot>().detect_Range.transform.localScale.y + 0.15f, GetComponent<Bot>().detect_Range.transform.localScale.z + 0.15f);
-            //    range += 1.5f;
-            //}
         }
     }
     public void WearHat(int index)
@@ -159,10 +159,9 @@ public class Character : MonoBehaviour
         }
         anim.speed = 1;
     }
-    //on game state change 
-    protected virtual void OnGameStateChanged(GameState newGameState)
+    protected virtual void OnGameStateChanged(GameManager.GameState newGameState)
     {
-        enabled = newGameState == GameState.Pause;
+        enabled = newGameState == GameManager.GameState.Paused;
         if (!enabled)
         {
             PauseAnim();
