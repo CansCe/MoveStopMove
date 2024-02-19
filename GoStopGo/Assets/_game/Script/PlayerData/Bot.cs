@@ -10,6 +10,7 @@ public class Bot : Character
     public NavMeshAgent agent;
     public float wanderRadius;
     public GameObject hit_Circle;
+    public GameObject self_HitBox;
     public Vector3 next_Position;
     public float waitToShootTime; 
     public GameObject is_Targeted;
@@ -21,10 +22,17 @@ public class Bot : Character
     }
     void Update()
     {
-        if(isDead != true)
-            if(canMove)
-            Move_And_ChangeAnim();
-        target_position = Get_Nearest_Enemy();
+        if (isDead)
+        {
+            Dead();
+            return;
+        }
+        if (isDead != true)
+        {
+            if (canMove)
+                Move_And_ChangeAnim();
+            target_position = Get_Nearest_Enemy();
+        }
     }
     void Move_And_ChangeAnim()
     {
@@ -165,6 +173,5 @@ public class Bot : Character
         {
             agent.destination = next_Position;
         }
-
     }
 }

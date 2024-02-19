@@ -5,19 +5,15 @@ using UnityEngine;
 public class SelfHitBox : MonoBehaviour
 {
     public GameObject parent;
+    public GameObject indicator;
     private void OnTriggerEnter(Collider other)
     {
         if (other.gameObject.CompareTag("Bullet"))
         {
             if (parent.GetComponent<Character>().hp > 0)
             {
-                //trigger the parent's hit function
-                parent.GetComponent<Character>().Dead();
+                parent.GetComponent<Character>().hp -= 1;
             }
-        }
-        if (other.gameObject.CompareTag("Boomerang"))
-        {
-            return;
         }
     }
 }

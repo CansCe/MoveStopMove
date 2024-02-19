@@ -19,7 +19,12 @@ public class Player : Character
     }
     void Update()
     {
-        if(isDead != true)
+        if (isDead)
+        {
+            Dead();
+            return;
+        }
+        if (isDead != true)
             if (canMove)
             {
                 Rotate_And_AnimChange();
@@ -29,6 +34,7 @@ public class Player : Character
                     target_position = Get_Nearest_Enemy();
                 }
             }
+        
     }
     void FixedUpdate()
     {
@@ -61,7 +67,8 @@ public class Player : Character
             else
             {
                 if(canMove || !isDead)
-                    ChangeAnim("Idle");
+                    if(input == Vector3.zero)
+                        ChangeAnim("Idle");
             }
         }
     }

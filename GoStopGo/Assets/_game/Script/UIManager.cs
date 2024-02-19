@@ -7,7 +7,8 @@ public class UIManager : MonoBehaviour
 {
     public Canvas start_Game_Canvas;
     public Canvas player_contoller_Canvas;
-    
+    public Canvas shop_Canvas;
+
     public static UIManager instance;
     private void Start()
     {
@@ -16,7 +17,7 @@ public class UIManager : MonoBehaviour
 
     public void StartLevel()
     {
-        start_Game_Canvas.gameObject.SetActive(false);
+        //start_Game_Canvas.gameObject.SetActive(false);
         player_contoller_Canvas.gameObject.SetActive(true);
     }
 
@@ -24,5 +25,10 @@ public class UIManager : MonoBehaviour
     {
         start_Game_Canvas.gameObject.SetActive(true);
         player_contoller_Canvas.gameObject.SetActive(false);
+    }
+
+    public void OnStart()
+    {
+        shop_Canvas.gameObject.SetActive(true);
     }
 }

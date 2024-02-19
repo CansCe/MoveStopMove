@@ -11,9 +11,10 @@ public class Character : MonoBehaviour
     public int hp = 1;
     public float speed = 15;
     public bool canMove = true;
-    public bool isDead => hp<0;
+    public bool isDead => hp<=0;
     public int current_bullet = 1;
     public float detect_radius = 1.5f;
+    public float indicator_radius = 3.0f;
 
     public float range;
     public Rigidbody rb;
@@ -48,20 +49,20 @@ public class Character : MonoBehaviour
     }
     public virtual void Dead()
     {
-        if (isDead == true)
+        ChangeAnim("Dead");
+        canMove = false;
+        ParticleSystem temparory = SimplePool.instance.Get_Pooled_Particle();
+        Vector3 position = new Vector3(transform.position.x, transform.position.y + 1, transform.position.z);
+        if(temparory == null)
         {
             return;
         }
-        ChangeAnim("Dead");
-        ParticleSystem temparory = SimplePool.instance.Get_Pooled_Particle();
-        Vector3 position = new Vector3(transform.position.x, transform.position.y + 1, transform.position.z);
         temparory.transform.position = position;
         temparory.gameObject.SetActive(true);
         temparory.transform.rotation = Quaternion.Euler(0, 0, 0);
         temparory.Play();
         rb.velocity = Vector3.zero;
         transform.position = transform.position;
-        hp = 0;
     }
     public virtual IEnumerator Shoot(Vector3 target_position)
     {
@@ -78,7 +79,7 @@ public class Character : MonoBehaviour
             target_position.y = transform.position.y;
             transform.LookAt(target_position);
             yield return new WaitForSeconds(0.39f);
-            GameObject clone = SimplePool.instance.Get_Pooled_Boomerang();
+            GameObject clone = SimplePool.instance.Get_Pooled_Bullet();
             clone.SetActive(true);
             clone.transform.position = transform.position + transform.forward * 1.5f;
             clone.gameObject.GetComponent<Bullet>().target_position= target_position;
@@ -110,6 +111,7 @@ public class Character : MonoBehaviour
                     if (clone != null)
                         clone.gameObject.GetComponent<Bot>().is_Targeted.SetActive(true);
                 }
+                
             }
         }
         if(temparory != Vector3.zero)

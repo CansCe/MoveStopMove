@@ -1916,6 +1916,7 @@ MonoBehaviour:
   canMove: 1
   current_bullet: 1
   detect_radius: 1.5
+  indicator_radius: 1.5
   range: 8.5
   rb: {fileID: 458506499}
   anim: {fileID: 458506500}
@@ -1923,7 +1924,7 @@ MonoBehaviour:
   target_position: {x: 0, y: 0, z: 0}
   target_Transform: {fileID: 0}
   head: {fileID: 2722861}
-  current_hat: 8
+  current_hat: 3
   detect_Range: {fileID: 102203297}
   control_joystick: {fileID: 0}
   current_Targeted_Enemy: 0
@@ -2305,6 +2306,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   parent: {fileID: 458506493}
+  indicator: {fileID: 0}
 --- !u!1 &705507993
 GameObject:
   m_ObjectHideFlags: 0
@@ -3162,8 +3164,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bac8cbb42edac0e4b8dbf82d24b60fdb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  start_Game_Canvas: {fileID: 0}
-  player_contoller_Canvas: {fileID: 0}
+  start_Game_Canvas: {fileID: 740947971}
+  player_contoller_Canvas: {fileID: 2092684541}
+  shop_Canvas: {fileID: 1917703868}
 --- !u!1 &1673649710
 GameObject:
   m_ObjectHideFlags: 0
@@ -3812,7 +3815,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!114 &2092684539
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3925,6 +3928,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 576f290629b405747915e5c901e2a810, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  test: 1
   pool_parent: {fileID: 2115035721}
   prefab_Bot: {fileID: 762917237826302295, guid: b9328931028c017438efc593a6ddbec1, type: 3}
   prefab_Bullet: {fileID: 3044910810797189099, guid: d8c6cf2229412e64285392f4b59626f4, type: 3}

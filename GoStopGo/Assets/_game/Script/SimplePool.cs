@@ -5,6 +5,7 @@ using UnityEngine;
 
 public class SimplePool : MonoBehaviour
 {
+    public bool test;
     public Transform pool_parent;
     public GameObject prefab_Bot;
     public GameObject prefab_Bullet;
@@ -22,10 +23,6 @@ public class SimplePool : MonoBehaviour
         SpawnAndPoolBots(10);
         SpawnAndPoolBullet(10);
         SpawnAndPoolParticle(10);
-    }
-    public static void Execute()
-    {
-        instance = FindObjectOfType<SimplePool>();
     }
     public Vector3 Get_Random_Position()
     {
@@ -48,7 +45,7 @@ public class SimplePool : MonoBehaviour
         for (int i = 0; i < number_of_bot; i++)
         {
             GameObject obj = Instantiate(prefab_Bot, Get_Random_Position(), Quaternion.identity, pool_parent);
-            obj.SetActive(false);
+            obj.SetActive(test);
             list_Pooled_Bots.Add(obj);
         }
     }

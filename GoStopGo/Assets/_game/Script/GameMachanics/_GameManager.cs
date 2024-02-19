@@ -41,12 +41,8 @@ public class GameManager : MonoBehaviour
     }
     public void StartLevel()
     {
-            SimplePool.Execute();
-            foreach (GameObject bot in SimplePool.instance.list_Pooled_Bots)
-            {
-                bot.SetActive(true);
-            }
-        //UIManager.instance.StartLevel();
+        SimplePool.instance.Level_Start();
+        UIManager.instance.StartLevel();
     }
     public void ResetLevel()
     {
@@ -64,12 +60,6 @@ public class GameManager : MonoBehaviour
     {
         SimplePool.instance.Resume_State();
     }
-
-    //obtained item set as string 
-    //split string into array
-    //check if the item is already obtained
-    //if not, add to the array
-
     public void UpdateGameState(GameState newState)
     {
         current_State = newState;
