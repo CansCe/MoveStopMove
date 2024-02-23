@@ -1,0 +1,220 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "F:\\Unity_Project\\MoveStopMove\\GoStopGo\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{6D78F515-ECE7-9F19-45A7-94D5066EA6F3}|Assembly-CSharp.csproj|F:\\Unity_Project\\MoveStopMove\\GoStopGo\\assets\\_game\\script\\playerdata\\character.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{6D78F515-ECE7-9F19-45A7-94D5066EA6F3}|Assembly-CSharp.csproj|solutionrelative:assets\\_game\\script\\playerdata\\character.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{6D78F515-ECE7-9F19-45A7-94D5066EA6F3}|Assembly-CSharp.csproj|F:\\Unity_Project\\MoveStopMove\\GoStopGo\\assets\\_game\\script\\playerdata\\player.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{6D78F515-ECE7-9F19-45A7-94D5066EA6F3}|Assembly-CSharp.csproj|solutionrelative:assets\\_game\\script\\playerdata\\player.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{6D78F515-ECE7-9F19-45A7-94D5066EA6F3}|Assembly-CSharp.csproj|F:\\Unity_Project\\MoveStopMove\\GoStopGo\\assets\\_game\\script\\playerdata\\selfhitbox.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{6D78F515-ECE7-9F19-45A7-94D5066EA6F3}|Assembly-CSharp.csproj|solutionrelative:assets\\_game\\script\\playerdata\\selfhitbox.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{6D78F515-ECE7-9F19-45A7-94D5066EA6F3}|Assembly-CSharp.csproj|f:\\unity_project\\movestopmove\\gostopgo\\assets\\_game\\script\\gamemachanics\\_camera.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{6D78F515-ECE7-9F19-45A7-94D5066EA6F3}|Assembly-CSharp.csproj|solutionrelative:assets\\_game\\script\\gamemachanics\\_camera.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{6D78F515-ECE7-9F19-45A7-94D5066EA6F3}|Assembly-CSharp.csproj|f:\\unity_project\\movestopmove\\gostopgo\\assets\\_game\\script\\gamemachanics\\_gamemanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{6D78F515-ECE7-9F19-45A7-94D5066EA6F3}|Assembly-CSharp.csproj|solutionrelative:assets\\_game\\script\\gamemachanics\\_gamemanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{6D78F515-ECE7-9F19-45A7-94D5066EA6F3}|Assembly-CSharp.csproj|F:\\Unity_Project\\MoveStopMove\\GoStopGo\\assets\\_game\\script\\uimanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{6D78F515-ECE7-9F19-45A7-94D5066EA6F3}|Assembly-CSharp.csproj|solutionrelative:assets\\_game\\script\\uimanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{6D78F515-ECE7-9F19-45A7-94D5066EA6F3}|Assembly-CSharp.csproj|F:\\Unity_Project\\MoveStopMove\\GoStopGo\\assets\\_game\\script\\simplepool.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{6D78F515-ECE7-9F19-45A7-94D5066EA6F3}|Assembly-CSharp.csproj|solutionrelative:assets\\_game\\script\\simplepool.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{6D78F515-ECE7-9F19-45A7-94D5066EA6F3}|Assembly-CSharp.csproj|F:\\Unity_Project\\MoveStopMove\\GoStopGo\\assets\\_game\\script\\gamemachanics\\shop.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{6D78F515-ECE7-9F19-45A7-94D5066EA6F3}|Assembly-CSharp.csproj|solutionrelative:assets\\_game\\script\\gamemachanics\\shop.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{6D78F515-ECE7-9F19-45A7-94D5066EA6F3}|Assembly-CSharp.csproj|F:\\Unity_Project\\MoveStopMove\\GoStopGo\\assets\\_game\\script\\playerdata\\onlyfordisplay.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{6D78F515-ECE7-9F19-45A7-94D5066EA6F3}|Assembly-CSharp.csproj|solutionrelative:assets\\_game\\script\\playerdata\\onlyfordisplay.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{6D78F515-ECE7-9F19-45A7-94D5066EA6F3}|Assembly-CSharp.csproj|F:\\Unity_Project\\MoveStopMove\\GoStopGo\\assets\\_game\\importedasset\\easyindicatorassets\\offscreenmarker.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{6D78F515-ECE7-9F19-45A7-94D5066EA6F3}|Assembly-CSharp.csproj|solutionrelative:assets\\_game\\importedasset\\easyindicatorassets\\offscreenmarker.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{6D78F515-ECE7-9F19-45A7-94D5066EA6F3}|Assembly-CSharp.csproj|F:\\Unity_Project\\MoveStopMove\\GoStopGo\\assets\\_game\\script\\playerdata\\bot.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{6D78F515-ECE7-9F19-45A7-94D5066EA6F3}|Assembly-CSharp.csproj|solutionrelative:assets\\_game\\script\\playerdata\\bot.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{6D78F515-ECE7-9F19-45A7-94D5066EA6F3}|Assembly-CSharp.csproj|F:\\Unity_Project\\MoveStopMove\\GoStopGo\\assets\\_game\\script\\wardrobe.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{6D78F515-ECE7-9F19-45A7-94D5066EA6F3}|Assembly-CSharp.csproj|solutionrelative:assets\\_game\\script\\wardrobe.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 8,
+          "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "_Camera.cs",
+              "DocumentMoniker": "F:\\Unity_Project\\MoveStopMove\\GoStopGo\\Assets\\_game\\Script\\GameMachanics\\_Camera.cs",
+              "RelativeDocumentMoniker": "Assets\\_game\\Script\\GameMachanics\\_Camera.cs",
+              "ToolTip": "F:\\Unity_Project\\MoveStopMove\\GoStopGo\\Assets\\_game\\Script\\GameMachanics\\_Camera.cs",
+              "RelativeToolTip": "Assets\\_game\\Script\\GameMachanics\\_Camera.cs",
+              "ViewState": "AQIAAAoAAAAAAAAAAAAowBgAAABAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-02-23T06:51:17.096Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 7,
+              "Title": "Shop.cs",
+              "DocumentMoniker": "F:\\Unity_Project\\MoveStopMove\\GoStopGo\\Assets\\_game\\Script\\GameMachanics\\Shop.cs",
+              "RelativeDocumentMoniker": "Assets\\_game\\Script\\GameMachanics\\Shop.cs",
+              "ToolTip": "F:\\Unity_Project\\MoveStopMove\\GoStopGo\\Assets\\_game\\Script\\GameMachanics\\Shop.cs",
+              "RelativeToolTip": "Assets\\_game\\Script\\GameMachanics\\Shop.cs",
+              "ViewState": "AQIAAAsAAAAAAAAAAAAQwBkAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-02-22T18:08:10.556Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 9,
+              "Title": "OffscreenMarker.cs",
+              "DocumentMoniker": "F:\\Unity_Project\\MoveStopMove\\GoStopGo\\Assets\\_game\\ImportedAsset\\EasyIndicatorAssets\\OffscreenMarker.cs",
+              "RelativeDocumentMoniker": "Assets\\_game\\ImportedAsset\\EasyIndicatorAssets\\OffscreenMarker.cs",
+              "ToolTip": "F:\\Unity_Project\\MoveStopMove\\GoStopGo\\Assets\\_game\\ImportedAsset\\EasyIndicatorAssets\\OffscreenMarker.cs",
+              "RelativeToolTip": "Assets\\_game\\ImportedAsset\\EasyIndicatorAssets\\OffscreenMarker.cs",
+              "ViewState": "AQIAAFYAAAAAAAAAAAAAwGoAAAAeAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-02-19T12:41:30.327Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "_GameManager.cs",
+              "DocumentMoniker": "F:\\Unity_Project\\MoveStopMove\\GoStopGo\\Assets\\_game\\Script\\GameMachanics\\_GameManager.cs",
+              "RelativeDocumentMoniker": "Assets\\_game\\Script\\GameMachanics\\_GameManager.cs",
+              "ToolTip": "F:\\Unity_Project\\MoveStopMove\\GoStopGo\\Assets\\_game\\Script\\GameMachanics\\_GameManager.cs",
+              "RelativeToolTip": "Assets\\_game\\Script\\GameMachanics\\_GameManager.cs",
+              "ViewState": "AQIAACsAAAAAAAAAAAAhwDIAAABAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-02-19T12:41:30.336Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "Player.cs",
+              "DocumentMoniker": "F:\\Unity_Project\\MoveStopMove\\GoStopGo\\Assets\\_game\\Script\\PlayerData\\Player.cs",
+              "RelativeDocumentMoniker": "Assets\\_game\\Script\\PlayerData\\Player.cs",
+              "ToolTip": "F:\\Unity_Project\\MoveStopMove\\GoStopGo\\Assets\\_game\\Script\\PlayerData\\Player.cs",
+              "RelativeToolTip": "Assets\\_game\\Script\\PlayerData\\Player.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAUAAAAfAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-02-19T12:41:30.336Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "SelfHitBox.cs",
+              "DocumentMoniker": "F:\\Unity_Project\\MoveStopMove\\GoStopGo\\Assets\\_game\\Script\\PlayerData\\SelfHitBox.cs",
+              "RelativeDocumentMoniker": "Assets\\_game\\Script\\PlayerData\\SelfHitBox.cs",
+              "ToolTip": "F:\\Unity_Project\\MoveStopMove\\GoStopGo\\Assets\\_game\\Script\\PlayerData\\SelfHitBox.cs",
+              "RelativeToolTip": "Assets\\_game\\Script\\PlayerData\\SelfHitBox.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAA4AAAA5AAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-02-19T12:41:30.333Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 10,
+              "Title": "Bot.cs",
+              "DocumentMoniker": "F:\\Unity_Project\\MoveStopMove\\GoStopGo\\Assets\\_game\\Script\\PlayerData\\Bot.cs",
+              "RelativeDocumentMoniker": "Assets\\_game\\Script\\PlayerData\\Bot.cs",
+              "ToolTip": "F:\\Unity_Project\\MoveStopMove\\GoStopGo\\Assets\\_game\\Script\\PlayerData\\Bot.cs",
+              "RelativeToolTip": "Assets\\_game\\Script\\PlayerData\\Bot.cs",
+              "ViewState": "AQIAAJUAAAAAAAAAAAAwwLAAAAABAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-02-19T12:41:30.336Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
+              "Title": "SimplePool.cs",
+              "DocumentMoniker": "F:\\Unity_Project\\MoveStopMove\\GoStopGo\\Assets\\_game\\Script\\SimplePool.cs",
+              "RelativeDocumentMoniker": "Assets\\_game\\Script\\SimplePool.cs",
+              "ToolTip": "F:\\Unity_Project\\MoveStopMove\\GoStopGo\\Assets\\_game\\Script\\SimplePool.cs",
+              "RelativeToolTip": "Assets\\_game\\Script\\SimplePool.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAABkAAAAFAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-02-19T12:41:30.336Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "Character.cs",
+              "DocumentMoniker": "F:\\Unity_Project\\MoveStopMove\\GoStopGo\\Assets\\_game\\Script\\PlayerData\\Character.cs",
+              "RelativeDocumentMoniker": "Assets\\_game\\Script\\PlayerData\\Character.cs",
+              "ToolTip": "F:\\Unity_Project\\MoveStopMove\\GoStopGo\\Assets\\_game\\Script\\PlayerData\\Character.cs",
+              "RelativeToolTip": "Assets\\_game\\Script\\PlayerData\\Character.cs",
+              "ViewState": "AQIAAFQAAAAAAAAAAAAmwFMAAABRAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-02-19T12:41:30.333Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 11,
+              "Title": "Wardrobe.cs",
+              "DocumentMoniker": "F:\\Unity_Project\\MoveStopMove\\GoStopGo\\Assets\\_game\\Script\\Wardrobe.cs",
+              "RelativeDocumentMoniker": "Assets\\_game\\Script\\Wardrobe.cs",
+              "ToolTip": "F:\\Unity_Project\\MoveStopMove\\GoStopGo\\Assets\\_game\\Script\\Wardrobe.cs",
+              "RelativeToolTip": "Assets\\_game\\Script\\Wardrobe.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAA0AAAAQAAAA",
+              "Icon": "00000000-0000-0000-0000-000000000000.000000|iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAADtSURBVDhPYxgFCHDh4YX/sQtj/6u3qP9XblL\u002BHzk/8j9UiuHtx7f/VZpVwHxkNggwgohLjy79D18SzmAua86QZJbEwM/Bz3D91XWGCNMIRpAGo34jsGJkwMrMynCn9g5YP0PK0pT/3tO9/3/58gVuMjLA5wImEHH68WkGN3U3Bh4eHoiJJACwAb/\u002B/gI7CRuAeeH3398M8g3ycDayKxjC5oX9D54TjNX5IIDPC2Ann7x78n/E4ggGDw0PhgiDCLBrLj2/xJBhl0HQS3AFe67t\u002BT/lyBSGO2/uMHCxcTHYK9szdAd2kxwmIw8wMAAAESl0qwYO77cAAAAASUVORK5CYII=",
+              "WhenOpened": "2024-02-19T14:17:12.093Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "UIManager.cs",
+              "DocumentMoniker": "F:\\Unity_Project\\MoveStopMove\\GoStopGo\\Assets\\_game\\Script\\UIManager.cs",
+              "RelativeDocumentMoniker": "Assets\\_game\\Script\\UIManager.cs",
+              "ToolTip": "F:\\Unity_Project\\MoveStopMove\\GoStopGo\\Assets\\_game\\Script\\UIManager.cs",
+              "RelativeToolTip": "Assets\\_game\\Script\\UIManager.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAABMAAAAIAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-02-15T02:57:53.235Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 8,
+              "Title": "OnlyForDisplay.cs",
+              "DocumentMoniker": "F:\\Unity_Project\\MoveStopMove\\GoStopGo\\Assets\\_game\\Script\\PlayerData\\OnlyForDisplay.cs",
+              "RelativeDocumentMoniker": "Assets\\_game\\Script\\PlayerData\\OnlyForDisplay.cs",
+              "ToolTip": "F:\\Unity_Project\\MoveStopMove\\GoStopGo\\Assets\\_game\\Script\\PlayerData\\OnlyForDisplay.cs",
+              "RelativeToolTip": "Assets\\_game\\Script\\PlayerData\\OnlyForDisplay.cs",
+              "ViewState": "AQIAAAMAAAAAAAAAAAAAAA8AAAAFAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-02-23T03:18:57.702Z"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

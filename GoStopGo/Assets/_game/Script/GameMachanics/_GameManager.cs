@@ -11,17 +11,19 @@ public class GameManager : MonoBehaviour
     public int[] obtained_pants;
     public int[] obtained_sets;
 
+    public GameObject _player;
     public static GameManager instance;
 
     public static event Action<GameState> OnGameStateChanged;
 
     public GameState current_State;
     
+    //this canvas.text to display player gold on screen
+    public UnityEngine.UI.Text gold_Text;
     void Start()
     {
         instance = this;
         LoadGame();
-        StartLevel();
     }   
     void Update()
     {
@@ -33,6 +35,11 @@ public class GameManager : MonoBehaviour
 
         PlayerPrefs.SetInt("gold", player_Gold);
         PlayerPrefs.Save();
+        if(player_Gold >= 1000)
+        {
+            player_Gold = 0;
+            SaveGame(0);
+        }
     }
     public void LoadGame()
     {
@@ -41,8 +48,10 @@ public class GameManager : MonoBehaviour
     }
     public void StartLevel()
     {
+        GameObject player =Instantiate(_player, new Vector3(0, 1, 0), Quaternion.identity);
         SimplePool.instance.Level_Start();
         UIManager.instance.StartLevel();
+        player.SetActive(true);
     }
     public void ResetLevel()
     {
@@ -63,7 +72,6 @@ public class GameManager : MonoBehaviour
     public void UpdateGameState(GameState newState)
     {
         current_State = newState;
-
         switch (newState)
         {
             case GameState.Start:

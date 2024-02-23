@@ -20,5 +20,9 @@ public class _Camera : MonoBehaviour
         {
             transform.position = player.transform.position + adding_Vector;
         }
+        else
+        {
+            player = GameObject.FindGameObjectWithTag("Player");
+        }
     }
 }

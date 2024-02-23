@@ -11,16 +11,15 @@ public class Wardrobe : MonoBehaviour
     public Material[] pant;
     public Material[] sets;
 
-    // Start is called before the first frame update
     void Start()
     {
         instance = this;        
     }
-    public GameObject get_Hats(int index)
+    public GameObject Get_Hats(int index)
     {
         return hats[index];
     }
-    public GameObject get_Weapons(int index)
+    public GameObject Get_Weapons(int index)
     {
         return weapons[index];
     }

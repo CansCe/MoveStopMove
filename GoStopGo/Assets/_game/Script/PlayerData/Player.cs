@@ -11,17 +11,25 @@ public class Player : Character
     public int current_Targeted_Enemy=0;
     public GameObject self_Capsule_HitBox;
     public static Player instance;
+    public bool destroyHat;
+
+    private bool trigger = false;
 
     void Start()
     {
         instance = this;
-        control_joystick = FindAnyObjectByType<Joystick>();
+        
+        WearHat(2);
     }
     void Update()
     {
         if (isDead)
         {
-            Dead();
+            if (!trigger)
+            {
+                Dead();
+                trigger = true;
+            }
             return;
         }
         if (isDead != true)
@@ -34,7 +42,10 @@ public class Player : Character
                     target_position = Get_Nearest_Enemy();
                 }
             }
-        
+        if (destroyHat)
+        {
+            ClearHat();
+        }
     }
     void FixedUpdate()
     {
@@ -44,10 +55,18 @@ public class Player : Character
     }
     public void Move()
     {
-        rb.velocity = new Vector3(control_joystick.Horizontal * speed, 0, control_joystick.Vertical * speed);
+        if(control_joystick==null)
+            control_joystick = FindAnyObjectByType<Joystick>();
+        else
+            rb.velocity = new Vector3(control_joystick.Horizontal * speed, 0, control_joystick.Vertical * speed);
     }
     public void Rotate_And_AnimChange()
     {
+        if (control_joystick == null)
+        {
+            control_joystick = FindAnyObjectByType<Joystick>();
+            return;
+        }
         Vector3 input = new Vector3(control_joystick.Horizontal, 0, control_joystick.Vertical);
         if(input != Vector3.zero)
         {
@@ -81,9 +100,20 @@ public class Player : Character
 
     public void Paused()
     {
-        //cannot move and shoot
         canMove = false;
         rb.velocity = Vector3.zero;
         ChangeAnim("Idle");
+    }
+    public void ClearHat()
+    {
+        foreach (Transform child in head.transform)
+        {
+            if (child.gameObject.name == Wardrobe.instance.Get_Hats(current_hat).name + "(Clone)")
+            {
+                Destroy(child.gameObject);
+            }
+            else
+                continue;
+        }
     }
 }

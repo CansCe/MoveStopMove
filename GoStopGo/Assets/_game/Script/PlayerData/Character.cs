@@ -81,7 +81,7 @@ public class Character : MonoBehaviour
             yield return new WaitForSeconds(0.39f);
             GameObject clone = SimplePool.instance.Get_Pooled_Bullet();
             clone.SetActive(true);
-            clone.transform.position = transform.position + transform.forward * 1.5f;
+            clone.transform.position = transform.position + transform.forward * 2f;
             clone.gameObject.GetComponent<Bullet>().target_position= target_position;
             clone.gameObject.GetComponent<Bullet>().parent = transform;
             canMove = true;
@@ -137,14 +137,11 @@ public class Character : MonoBehaviour
             range += 1.5f;
         }
     }
-    public void WearHat(int index)
+    public virtual void WearHat(int index)
     {
-        Instantiate(Wardrobe.instance.get_Hats(index), head.transform.position, Quaternion.identity);
+        Instantiate(Wardrobe.instance.Get_Hats(index), head.transform.position, Quaternion.identity,head.transform);
     }
-    public void WearWeapon(int index)
-    {
-        Instantiate(Wardrobe.instance.get_Weapons(index), head.transform.position, Quaternion.identity);
-    }
+    
     public void PauseAnim()
     {
         if (anim == null)
