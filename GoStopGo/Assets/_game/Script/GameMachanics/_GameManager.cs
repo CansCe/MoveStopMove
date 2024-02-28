@@ -53,13 +53,22 @@ public class GameManager : MonoBehaviour
         UIManager.instance.StartLevel();
         player.SetActive(true);
     }
-    public void ResetLevel()
+    public void ClearLevel()
     {
         foreach (GameObject bot in SimplePool.instance.list_Pooled_Bots)
         {
             bot.SetActive(false);
         }
-        UIManager.instance.ResetLevel();
+    }
+    public void Restart()
+    {
+        UIManager.instance.StartLevel();
+        Player.instance.playAgain();
+        foreach(GameObject bot in SimplePool.instance.list_Pooled_Bots)
+        {
+            bot.GetComponent<Bot>().hp = 1;
+            bot.SetActive(true);
+        }
     }
     public void PauseGame()
     {

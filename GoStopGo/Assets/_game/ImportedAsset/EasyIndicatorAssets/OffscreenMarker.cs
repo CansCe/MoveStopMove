@@ -5,7 +5,6 @@ class OffscreenMarker : MonoBehaviour {
     public Texture Icon = null;
     public Texture Arrow = null;
     public Color Color = Color.white;
-
     void Start() {
         var instance = OffscreenMarkersCameraScript.Instance();
         if ( instance ) {
@@ -30,7 +29,6 @@ class OffscreenMarkersCameraScript : MonoBehaviour {
 
     private Camera _camera => gameObject.GetComponent<Camera>();
     private List<OffscreenMarker> _trackedObjects = new List<OffscreenMarker>();
-
     public void Register( OffscreenMarker om ) {
         if (! _trackedObjects.Contains( om ) ) {
             _trackedObjects.Add( om );
@@ -38,7 +36,6 @@ class OffscreenMarkersCameraScript : MonoBehaviour {
             Debug.LogWarning( "EntTrackerLib: The tracked objects list already contains " + om, om );
         }
     }
-
     private bool IsVisible( GameObject go ) {
         Plane [] planes = GeometryUtility.CalculateFrustumPlanes( _camera );
         Renderer [] rends = go.GetComponentsInChildren<Renderer>();
@@ -84,7 +81,12 @@ class OffscreenMarkersCameraScript : MonoBehaviour {
         float margin = arrowSize.y;
         for ( int i = _trackedObjects.Count - 1; i >= 0; i-- ) {
             OffscreenMarker marker = _trackedObjects[i];
-            if ( marker && marker.gameObject ) {
+            if(marker.gameObject.activeSelf == false)
+            {
+                _trackedObjects.RemoveAt(i);
+                continue;
+            }
+            if ( marker && marker.gameObject) {
                 if ( ! IsVisible( marker.gameObject ) ) {
                     Vector3 wp = FixBehindCamera( marker.transform.position );
                     Vector2 mrkScrPos = _camera.WorldToScreenPoint( wp );

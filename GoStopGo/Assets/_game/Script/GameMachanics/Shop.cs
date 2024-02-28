@@ -7,6 +7,7 @@ public class Shop : MonoBehaviour
 {
     public static Shop instance;
     public Text gold_text;
+    public GameObject model;
 
     private void Start()
     {
@@ -27,5 +28,10 @@ public class Shop : MonoBehaviour
     public void Update_Shop()
     {
         gold_text.text = GameManager.instance.player_Gold.ToString();
+    }
+    public void Update_Model(int hat, int weapon, int set)
+    {
+        model.GetComponent<OnlyForDisplay>().WearHat(0);
+        model.GetComponent<OnlyForDisplay>().WearWeapon(0);
     }
 }

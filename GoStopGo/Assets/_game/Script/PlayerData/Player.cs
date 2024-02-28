@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using Unity.PlasticSCM.Editor.WebApi;
+using UnityEditor;
 using UnityEngine;
 
 public class Player : Character
@@ -18,7 +19,6 @@ public class Player : Character
     void Start()
     {
         instance = this;
-        
         WearHat(2);
     }
     void Update()
@@ -96,8 +96,8 @@ public class Player : Character
         base.Dead();
         if(gold_Earned >0)
             GameManager.instance.SaveGame(gold_Earned);
+        UIManager.instance.Dead();
     }
-
     public void Paused()
     {
         canMove = false;

@@ -64,6 +64,20 @@ public class Character : MonoBehaviour
         rb.velocity = Vector3.zero;
         transform.position = transform.position;
     }
+    public void playAgain()
+    {
+        hp = 1;
+        canMove = true;
+        transform.localScale = new Vector3(1, 1, 1);
+        transform.position = new Vector3(0, 1, 0);
+        if (gameObject.CompareTag("Player"))
+        {
+            GetComponent<Player>().self_Capsule_HitBox.transform.localScale = new Vector3(1, 1, 1);
+            GetComponent<Player>().detect_Range.transform.localScale = new Vector3(1, 1, 1);
+            _Camera.instance.adding_Vector = new Vector3(0, 1, -5);
+            range = 10;
+        }
+    }
     public virtual IEnumerator Shoot(Vector3 target_position)
     {
         if(target_position == Vector3.zero)
@@ -111,7 +125,6 @@ public class Character : MonoBehaviour
                     if (clone != null)
                         clone.gameObject.GetComponent<Bot>().is_Targeted.SetActive(true);
                 }
-                
             }
         }
         if(temparory != Vector3.zero)
@@ -127,21 +140,25 @@ public class Character : MonoBehaviour
     }
     public void LevelUp()
     {
-        transform.localScale = new Vector3(transform.localScale.x + 0.15f, transform.localScale.y + 0.15f, transform.localScale.z + 0.15f);
-        transform.position = transform.position + new Vector3(0, 0.15f, 0);
+        transform.localScale = new Vector3(transform.localScale.x + 0.05f, transform.localScale.y + 0.05f, transform.localScale.z + 0.05f);
+        transform.position = transform.position + new Vector3(0, 0.05f, 0);
         if (gameObject.CompareTag("Player"))
         {
-            GetComponent<Player>().self_Capsule_HitBox.transform.localScale = new Vector3(GetComponent<Player>().self_Capsule_HitBox.transform.localScale.x + 0.15f, GetComponent<Player>().self_Capsule_HitBox.transform.localScale.y + 0.15f, GetComponent<Player>().self_Capsule_HitBox.transform.localScale.z + 0.15f);
-            GetComponent<Player>().detect_Range.transform.localScale = new Vector3(GetComponent<Player>().detect_Range.transform.localScale.x + 0.15f, GetComponent<Player>().detect_Range.transform.localScale.y + 0.15f, GetComponent<Player>().detect_Range.transform.localScale.z + 0.15f);
-            _Camera.instance.adding_Vector = new Vector3(_Camera.instance.adding_Vector.x, _Camera.instance.adding_Vector.y + 1.5f, _Camera.instance.adding_Vector.z-0.5f );
+            GetComponent<Player>().self_Capsule_HitBox.transform.localScale = new Vector3(GetComponent<Player>().self_Capsule_HitBox.transform.localScale.x + 0.05f, GetComponent<Player>().self_Capsule_HitBox.transform.localScale.y + 0.15f, GetComponent<Player>().self_Capsule_HitBox.transform.localScale.z + 0.05f);
+            GetComponent<Player>().detect_Range.transform.localScale = new Vector3(GetComponent<Player>().detect_Range.transform.localScale.x + 0.05f, GetComponent<Player>().detect_Range.transform.localScale.y + 0.05f, GetComponent<Player>().detect_Range.transform.localScale.z + 0.05f);
+            _Camera.instance.adding_Vector = new Vector3(_Camera.instance.adding_Vector.x, _Camera.instance.adding_Vector.y + 0.05f, _Camera.instance.adding_Vector.z-0.05f );
             range += 1.5f;
         }
     }
     public virtual void WearHat(int index)
     {
+        //if there is already a hat on head then remove it
+        if (head.transform.childCount > 0)
+        {
+            Destroy(head.transform.GetChild(0).gameObject);
+        }
         Instantiate(Wardrobe.instance.Get_Hats(index), head.transform.position, Quaternion.identity,head.transform);
     }
-    
     public void PauseAnim()
     {
         if (anim == null)
